@@ -10,7 +10,7 @@ import (
 var DB *gorm.DB
 
 func ConnectDatabase() {
-	db, err := gorm.Open(mysql.Open("root:@tcp(localhost:3306)/go_jwt_mux"))
+	db, err := gorm.Open(mysql.Open("root:@tcp(host.docker.internal:3306)/go_jwt_mux"))
 	if err != nil {
 		log.Panic(err)
 	}
